@@ -1,0 +1,42 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    "pip install -r requirements.txt",
+    "rm -rf ./db.sqlite3",
+    "python manage.py migrate"
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "runserver": {
+      "name": "runserver",
+      "command": "python manage.py runserver 0.0.0.0:8000",
+      "runAtStart": true
+    },
+    "make_migrations": {
+      "name": "make_migrations",
+      "command": "python manage.py makemigrations",
+      "runAtStart": false
+    },
+    "migrate": {
+      "name": "migrate",
+      "command": "python manage.py migrate",
+      "runAtStart": false
+    },
+    "install": {
+      "name": "install",
+      "command": "pip install -r requirements.txt",
+      "runAtStart": false
+    },
+    "shell_plus": {
+      "name": "shell_plus",
+      "command": "python manage.py shell_plus --ipython",
+      "runAtStart": false
+    },
+    "test": {
+      "name": "test",
+      "command": "python manage.py test",
+      "runAtStart": false
+    }
+  }
+}
